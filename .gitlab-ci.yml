@@ -1,0 +1,15 @@
+cache:
+  paths:
+    - obj/**/*.*
+
+Build:
+  script:
+    - cd Narwhal
+    - dotnet pack -c=Release -o=output
+    - cd output
+    - dotnet nuget push *.nupkg -k $NUGET_SECRET -s https://api.nuget.org/v3/index.json
+  tags:
+    - nuget
+    - kirinnee
+  only:
+    - master
