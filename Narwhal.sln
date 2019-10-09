@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Narwhal", "Narwhal\Narwhal.csproj", "{E6A668FF-3D48-4D4F-AA2B-C06AE23D43C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Narwhal.Lib", "Narwhal.Lib\Narwhal.Lib.csproj", "{E6A668FF-3D48-4D4F-AA2B-C06AE23D43C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{53E58960-79E6-4EFE-A801-945A6385239C}"
 EndProject
