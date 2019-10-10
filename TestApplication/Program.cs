@@ -9,19 +9,22 @@ namespace TestApplication
     {
         public static void Main(string[] args)
         {
-            var volume = args[0];
-            var target = args.Length > 1 ? args[1] : "data";
-            var location = args.Length > 2 ? args[2] : "./";
+            var type = args[0];
+            var volume = args[1];
+            var target = args.Length > 2 ? args[2] : "data";
+            var location = args.Length > 3 ? args[3] : "./";
             var narwhal = new Narwhal(false);
-            var errors = narwhal.Save(volume, target, location);
-            var enumerable = errors as string[] ?? errors.ToArray();
-            if (!enumerable.Any())
+            if (type == "save")
             {
-                Console.WriteLine("Done!");
+                var errors = narwhal.Save(volume, target, location);
+                var enumerable = errors as string[] ?? errors.ToArray();
+                Console.WriteLine(!enumerable.Any() ? "Done!" : enumerable.JoinBy("\n"));
             }
             else
             {
-                Console.WriteLine(enumerable.JoinBy("\n"));
+                var errors = narwhal.Load(volume, target);
+                var enumerable = errors as string[] ?? errors.ToArray();
+                Console.WriteLine(!enumerable.Any() ? "Done!" : enumerable.JoinBy("\n"));
             }
         }
     }
